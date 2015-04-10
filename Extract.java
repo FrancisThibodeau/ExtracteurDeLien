@@ -15,7 +15,7 @@ StringBuffer buffer = new StringBuffer();
 			buffer.append(ligne);
 		}
         reader.close();
-        Extraction(buffer,FileDestination);
+        EcritureDansNouveauFichier(FileDestination);
        }
        catch(IOException e)
        {
