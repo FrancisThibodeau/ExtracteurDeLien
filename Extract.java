@@ -4,7 +4,7 @@ public class Extract
 {
 StringBuffer buffer = new StringBuffer();
 
-   public void Read(String File,String FileDestination)
+   public void LectureFichier(String File,String FileDestination)
    {
       try
       {
@@ -20,10 +20,10 @@ StringBuffer buffer = new StringBuffer();
        catch(IOException e)
        {
        }
-       Extraction(buffer,FileDestination);
+       EcritureDansNouveauFichier(FileDestination);
    }
 
-   private void Extraction(StringBuffer fullFile , String FileDestination )
+   private void EcritureDansNouveauFichier(String FileDestination)
    {
    String ligne;
    int i = 0;
@@ -48,7 +48,7 @@ StringBuffer buffer = new StringBuffer();
    }
    public static void main(String []args)
    {
-     Extract lien = new Extract();
-     lien.Read(args[0],args[1]);
+     Extract ExtracteurDeLien = new Extract();
+     ExtracteurDeLien.LectureFichier(args[0],args[1]);
    }
 }
