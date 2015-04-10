@@ -30,10 +30,16 @@ StringBuffer buffer = new StringBuffer();
      try
      {
        PrintWriter  writer = new PrintWriter(new BufferedWriter(new FileWriter( FileDestination)));
-              while(i <= buffer.lastIndexOf("/a>"))
+       writer.println("Hyperliens extraits du fichier <b>" + FileDestination + "</b> :" + "<br>");
+	   
+	   writer.println("<ul>") ;  
+			while(i <= buffer.lastIndexOf("/a>"))
 			  {
+			   writer.println("<li>") ; 
 				writer.println(buffer.substring(buffer.indexOf("<a",i),i=buffer.indexOf("/a>",i) + 3));
+ writer.println("</li>") ; 
 			  }
+			  writer.println("</ul>") ; 
            writer.close();
      }
      catch(IOException e)
