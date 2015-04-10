@@ -8,14 +8,14 @@ StringBuffer buffer = new StringBuffer();
    {
       try
       {
-       BufferedReader reader =  reader = new BufferedReader(new FileReader(File));
+		BufferedReader reader =  reader = new BufferedReader(new FileReader(File));
         String ligne;
-
-         while((ligne = reader.readLine())!= null)
-             buffer.append(ligne);
-
-             reader.close();
-            Extraction(buffer,FileDestination);
+		while((ligne = reader.readLine())!= null)
+		{
+			buffer.append(ligne);
+		}
+        reader.close();
+        Extraction(buffer,FileDestination);
        }
        catch(IOException e)
        {
@@ -42,7 +42,7 @@ StringBuffer buffer = new StringBuffer();
    }
    public static void main(String []args)
    {
-     Extract tracteur = new Extract();
-     tracteur.Read(args[0],args[1]);
+     Extract lien = new Extract();
+     lien.Read(args[0],args[1]);
    }
 }
