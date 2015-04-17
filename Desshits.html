@@ -1,0 +1,143 @@
+<html lang="fr"><head>
+<link href="http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="/gab/css/gabarit.css" rel="stylesheet">
+<meta charset="utf-8">
+<title>L'extracteur de liens</title>
+</head>
+
+<body>
+<div class="coulbarresup">
+   <div class="centre">
+      <div id="barresup">
+         <span id="siteweb">Prog 101</span>
+         <span class="droite">
+            <span id="usager">Boucher, Mélissa</span>
+            <span><a href="/logout.php">Déconnexion</a> | <a href="/profil.php">Profil</a></span>
+         </span>
+      </div>
+   </div>
+</div>
+
+<div class="ligne"></div>
+
+<!--<div class="coulcours">-->
+<div style="background: #903; color: white">
+<div class="centre">
+   <div id="nocours">420-KEK-LG</div>
+   <div id="titrecours">Communication en informatique de gestion</div>
+</div>
+</div>
+
+<div class="coulmenu">
+   <div class="centre">
+      <div id="menu">
+         <a class="m" href="/cours/kek/">Accueil</a> |
+         <a class="m" href="/cours/calendrier.html"><span style="color:pink;">Calendrier</span></a> |
+         <!--
+         <a class="m" href="/cours/kek/notes-de-cours.php">Notes de cours</a> |
+         -->
+         <a class="m" href="http://prog101.com/bc/" target="_blank">Base de connaissances</a> |
+         <a class="m" href="http://docs.oracle.com/javase/8/docs/api/" target="_blank">Documentation Java
+         </a> |
+         <!--<a class="m" href="/modules/android">Android</a> | -->
+         <!--<a class="m" href="/modules/php">PHP</a> | -->
+         <!--<a class="m" href="/modules/">Modules de cours</a> | -->
+         <!--<a class="m" href="/travaux/labos.php">Labos et TP</a> |-->
+         <!--<a class="m" href="/util/">Outils Web</a> |-->
+         <a class="m" href="/commun/horaire.png">Horaire</a> |
+         <a class="m" href="/cours/kek/plan-de-cours.pdf">Plan de cours</a> |
+         <!--<a class="m" href="/cours/kek/plan-de-cours.pdf">Plan de cours</a> |-->
+         <a class="m" href="/commun/contact.php">Contact</a> |
+         <a class="m" href="http://depinfo2013.clg.qc.ca/" target="_blank">Depinfo</a>
+      </div>
+   </div>
+</div>
+<div class="coultexte">
+   <div class="centre">
+   <div id="contenu"><h2>L'extracteur de liens</h2>
+<p>
+Pour ce laboratoire, n'hésitez pas à consulter la documentation officielle de la classe <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html">String</a>.
+</p>
+<p>
+Le but de ce programme (la classe <strong>Extract</strong>) est d'extraire tous les hyperliens d'un premier fichier HTML pour former un second fichier HTML ne contenant que ces liens. Notons que les liens présents dans le fichier généré par le programme doivent être fonctionnels (cliquables) et qu'on ne retrouve qu'un lien par ligne, sans quoi vous perdez des points!
+</p>
+
+<img src="images/extracteur.jpg">
+
+<p>
+L'exemple suivant montre le fichier HTML original (source) et le fichier ne contenant que les liens (destination). Les noms des fichiers source et destination sont passés en paramètres sur la ligne de commande. Ces derniers doivent évidemment être validés (présence des deux paramètres et existence du fichier source).
+</p>
+<p>
+Exemple d'utilisation&nbsp;:
+</p>
+<pre style="padding: 10px; background: #eee; font-size: 1.2em;">c:\&gt; java Extract babouins.html liens.html
+</pre>
+<p></p>
+<p>
+Le fichier source&nbsp;:
+</p>
+<div style="border-width: 1px; border-style: solid; padding: 10px">
+<p>
+Les <a href="https://fr.wikipedia.org/wiki/Babouin">babouins</a> (<em>Papio ursinus</em>) sont de gros animaux au museau nu, très allongé, semblable à celui du chien. Certains babouins ont des espaces de peau nue dans la face, sur la poitrine ou le postérieur, où ils exhibent les <a href="http://www.crwflags.com/fotw/flags/qq-rb.html">couleurs les plus vives</a>&nbsp;: rouge, bleu ou violacé.
+</p>
+<p>
+Comme beaucoup de primates, les babouins vivent en <a href="http://www.plq.org/">bandes organisées</a>. Le babouin individuel ne se sent en sécurité qu'à l'intérieur de cette bande, dominée par quelques mâles puissants qui en assurent la défense; ils sont aussi chargés de faire la paix à l'occasion de <a href="http://www.lepoint.fr/monde/sunnites-contre-chiites-pourquoi-les-musulmans-se-font-la-guerre-19-03-2013-1643068_24.php">querelles intestines</a>.
+</p>
+</div>
+
+<p>
+Le fichier destination&nbsp;:
+</p>
+<div style="border-width: 1px; border-style: solid; padding: 10px">
+Hyperliens extraits du fichier <strong>babouins.html</strong>&nbsp;:
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Babouin">babouins</a></li>
+<li><a href="http://www.crwflags.com/fotw/flags/qq-rb.html">couleurs les plus vives</a></li>
+<li><a href="http://www.plq.org/">bandes organisées</a></li>
+<li><a href="http://www.lepoint.fr/monde/sunnites-contre-chiites-pourquoi-les-musulmans-se-font-la-guerre-19-03-2013-1643068_24.php">querelles intestines</a></li>
+</ul>
+</div>
+
+<p>
+Remarque&nbsp;: vous pouvez supposer que toutes les balises HTML sont écrites en lettres minuscules.
+</p>
+
+<div style="padding: 0px 10px; border: solid #999 1px;">
+<h3>Astuce</h3>
+<p>
+La façon la plus simple de réaliser ce programme est probablement de placer tout le contenu du fichier dans une seule chaîne de caractères et d'analyser celle-ci à la recherche de tous les hyperliens.
+</p>
+<p>
+On doit d'abord lire les lignes une par une avec un BufferedReader et construire la chaîne globale avec un <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html">StringBuffer</a> (beaucoup plus efficace que par concaténation de chaînes).
+</p>
+<p>
+Pour analyser ensuite la chaîne globale, on parcourt celle-ci à la recherche des balises pertinentes avec la méthode <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf%28int%29">indexOf</a> de la classe String et on extrait l'information avec la méthode <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring%28int%29">substring</a>.
+</p>
+<p>
+Voici la syntaxe d'un hyperlien (même si vous le savez déjà, bien sûr!)&nbsp;:
+</p><pre>&lt;a href="<span style="color:red">http://url.du.site</span>"&gt;<span style="color:red">texte affiché</span>&lt;/a&gt;
+</pre>
+<p></p>
+</div>
+
+<h3>Remise</h3>
+<p>
+Comme tout au long de la session, ce travail peut être fait en équipe de deux. Si tel est le cas, indiquez bien les noms des deux coéquipiers. Ce labo vaut 2 points et sera corrigé au retour des vacances de Pâques.
+</p><p>
+
+</p><hr style="height: 1px;">
+<p>Dernière modification le 27 mars 2015</p>
+</div>   </div>
+</div>
+
+<div class="ligne"></div>
+
+<div class="coulbarresup">
+   <div class="centre">
+      <div id="basdepage">
+         <span>leprof@gmail.com</span>
+      </div>
+   </div>
+</div>
+
+</body></html>
